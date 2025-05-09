@@ -1,0 +1,117 @@
+#-------------------------#
+# ALIASES - FILESYSTEM    #
+#-------------------------#
+alias mvn="nice mvn"
+alias cp="nice cp -v"
+alias mv="nice mv -v"
+alias tree="tree -F --dirsfirst"
+alias ll="ls -lh"
+alias la="ll -a"
+alias df="nice df -h"
+alias perms="stat -c \'%a %n\'"
+alias sitesLog="tail -f ~/Sites/wp-content/debug.log"
+
+#-------------------------#
+# ALIASES - APPLICATIONS  #
+#-------------------------#
+# GIT aliases
+alias gbr="git branch"
+alias gst="git status --short --branch"
+alias gft="git fetch"
+alias gpl="git pull"
+alias gps="git push"
+alias gci="git commit"
+alias gco="git checkout"
+alias gmg="git merge --no-commit"
+alias gad="git add"
+alias gsh="git stash"
+alias gsu="git submodule update --recursive --merge"
+alias gdf="git diff --word-diff"
+alias gdt="git difftool"
+alias ghi="git log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short"
+alias glo="git log --pretty=format:'%C(yellow)%h %C(blue)%ad%C(red)%d %C(reset)%s%C(green) [%cn]' --decorate --date=short"
+alias grm="git rm"
+alias gmv="git mv"
+alias gtg="git tag"
+alias cal="cal -m -3"
+alias grp="git grep -I"
+alias gty="git cat-file -t"
+alias gdu="git cat-file -p"
+alias gcf="git diff-tree --no-commit-id --name-only -r"
+alias gaf="git ls-tree --name-only -r"
+alias aivaras="gco aivaras"
+alias master="gco master; gpl"
+
+# SASS
+alias sassw='sass --watch --style=compact assets/scss/style.scss:style.css'
+alias sassnm='sass --watch --style=compact --sourcemap=none assets/scss/style.scss:style.css'
+alias sassmin='sass --watch --style=compressed --sourcemap=none assets/scss/style.scss:style.css'
+
+# Docker
+alias containers='docker container ls'
+alias up='docker-compose up -d mysql redis'
+alias stop='docker-compose stop && docker-compose rm -f'
+alias restart='docker-compose stop && docker-compose rm -f && docker-compose up -d mysql redis'
+alias status='docker-compose ps'
+alias mysqlLogs='docker-compose logs mysql'
+alias phpLogs='docker-compose logs php'
+
+# Devilbox
+alias shell='./shell.sh'
+alias dockerUpdate='./update-docker.sh'
+alias envDiff='vimdiff ~/Development/devilbox/env-example ~/Development/devilbox/.env'
+alias addRootCert='sudo security add-trusted-cert -d -r trustRoot -k /Library/Keychains/System.keychain ~/Development/devilbox/ca/devilbox-ca.crt'
+alias removeRootCert='sudo security delete-certificate -c "devilbox-ca"'
+
+# MongoDB
+# To run MongoDB (i.e. the mongod process) in the foreground
+alias runMdb='mongod --config /usr/local/etc/mongod.conf'
+# To run in the background instead
+alias runMdbBg='mongod --config /usr/local/etc/mongod.conf --fork'
+# To run MongoDB as a macOS service
+alias runMdbMacOs='brew services start mongodb-community@4.2'
+# To stop a mongod running as a macOS service
+alias stopMdbMacOs='brew services stop mongodb-community@4.2'
+# To verify that MongoDB is running
+alias verifyMdb='ps aux | grep -v grep | grep mongod'
+
+#-------------------------#
+# ALIASES - SYSTEM        #
+#-------------------------#
+alias source="source ~/.zshrc"
+alias showFiles="defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app"
+alias hideFiles="defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app"
+alias copyPub='pbcopy < ~/.ssh/id_rsa.pub'
+alias base='openssl base64 -in'
+alias spacer="defaults write com.apple.dock persistent-apps -array-add '{"tile-type"="spacer-tile";}'; killall Dock"
+
+#-------------------------#
+# ALIASES - NETWORKING    #
+#-------------------------#
+alias n="netstat -np tcp"
+alias netstat="netstat -an | grep -E 'LISTEN\s*$'"
+alias hosts="sudo vim /etc/hosts"
+alias knownHosts="sudo vim ~/.ssh/known_hosts"
+alias killDNS="sudo killall -HUP mDNSResponder"
+alias flushDNS="dscacheutil -flushcache"
+alias dnsFullFlush="sudo killall -HUP mDNSResponder && dscacheutil -flushcache"
+alias zin="ssh root@zin"
+alias cabernet="ssh root@cabernet"
+alias app="ssh aivaras@app"
+alias dss="ssh aivaras@165.22.162.66"
+
+#-------------------------#
+# ALIASES - TERMINUS      #
+#-------------------------#
+#alias terminus=/usr/local/bin/terminus
+#alias terminus=/usr/local/Cellar/terminus/3.2.1/bin/terminus
+#alias terminus=~/Terminus/vendor/bin/terminus
+#alias mode='sh ~/Projects/terminus-scripts/connection-set.sh'
+#alias cc='sh ~/Projects/terminus-scripts/env-clear-cache.sh'
+#alias clone='sh ~/Projects/terminus-scripts/env-clone-content.sh'
+#alias mdcreate='sh ~/Projects/terminus-scripts/multidev-create.sh'
+
+# TheFuck
+# For other shells, check https://github.com/nvbn/thefuck/wiki/Shell-aliases
+eval $(thefuck --alias)
+
