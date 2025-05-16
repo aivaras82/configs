@@ -1,3 +1,6 @@
+" Reuse your .vimrc
+source ~/.vimrc
+
 " Here is a list of the suggested options from defaults.vim:
 
 " Show a few lines of context around the cursor. Note that this makes the
@@ -16,7 +19,10 @@ set so=5
 set nu
 
 """ Plugins  --------------------------------
+set easymotion
+set highlightedyank
 set quickscope
+set relativenumber
 set which-key
 
 """ Plugin settings
@@ -24,6 +30,16 @@ set which-key
 " (default: 1000ms)
 " set timeoutlen=1000
 set notimeout
+"" Highlighted Yank
+"let g:highlightedyank_highlight_duration = "250"
+"let g:highlightedyank_highlight_color = "rgba(160, 160, 160, 155)"
+"let g:highlightedyank_highlight_foreground_color = "rgba(0, 0, 0, 255)"
+
+""" Editing and Reloading the Config
+set clipboard+=unnamed
+set clipboard+=ideaput
+"nnoremap \e :e ~/.ideavimrc<CR>
+"nnoremap \r :action IdeaVim.ReloadVimRc.reload<CR>
 
 """ Map leader to space ---------------------
 let mapleader=" "
@@ -31,6 +47,9 @@ let mapleader=" "
 """ Mappings --------------------------------
 map <leader>f <Plug>(easymotion-s)
 map <leader>e <Plug>(easymotion-f)
+
+""" The Escape button
+map <C-c> <Esc>
 
 """ Executing IDE Actions
 map \r <Action>(ReformatCode)
@@ -47,3 +66,5 @@ map <S-Space> <Action>(GotoNextError)
 
 map <leader>b <Action>(ToggleLineBreakpoint)
 map <leader>o <Action>(FileStructurePopup)
+
+nnoremap <c-\> :action SplitVertically<CR>
