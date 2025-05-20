@@ -1,0 +1,40 @@
+{
+    "workbench.iconTheme": "material-icon-theme",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "prettier.singleQuote": true,
+    "git.autofetch": true,
+    "editor.fontSize": 20,
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+    "chat.mcp.discovery.enabled": true,
+    "chat.agent.enabled": true,
+    "editor.fontFamily": "'Hack Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+    "files.exclude": {
+        "**/.idea": true
+    },
+    "workbench.fontAliasing": "antialiased",
+    "workbench.colorTheme": "Monokai",
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100,
+    "vim.vimrc.enable": true,
+    "vim.textwidth": 100,
+    "vim.neovimConfigPath": "~/.config/nvim/init.lua",
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "window.density.editorTabHeight": "compact",
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        {
+            "column": 100,
+            "color": "#fbff00"
+        },
+        {
+            "column": 120,
+            "color": "#ff7700"
+        }
+    ],
+    "prettier.tabWidth": 4,
+    "prettier.useTabs": true,
+}
