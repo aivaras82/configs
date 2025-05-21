@@ -1,29 +1,17 @@
 {
-    "workbench.iconTheme": "material-icon-theme",
-    "[javascript]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "prettier.singleQuote": true,
-    "git.autofetch": true,
-    "editor.fontSize": 20,
-    "[markdown]": {
-        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
-    },
-    "chat.mcp.discovery.enabled": true,
-    "chat.agent.enabled": true,
-    "editor.fontFamily": "'Hack Nerd Font', Menlo, Monaco, 'Courier New', monospace",
-    "files.exclude": {
-        "**/.idea": true
-    },
     "workbench.fontAliasing": "antialiased",
     "workbench.colorTheme": "Monokai",
-    "editor.wordWrap": "wordWrapColumn",
-    "editor.wordWrapColumn": 100,
-    "vim.vimrc.enable": true,
-    "vim.textwidth": 100,
-    "vim.neovimConfigPath": "~/.config/nvim/init.lua",
-    "vim.neovimPath": "/usr/local/bin/nvim",
-    "window.density.editorTabHeight": "compact",
+    "workbench.colorCustomizations": {
+        "[Monokai]": {
+            "editor.background": "#181818",
+            "sideBar.background": "#1d252d"
+        },
+    },
+    "workbench.iconTheme": "material-icon-theme",
+    "chat.agent.enabled": true,
+    "chat.mcp.discovery.enabled": true,
+    "editor.fontFamily": "'Hack Nerd Font', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 20,
     "editor.formatOnSave": true,
     "editor.rulers": [
         {
@@ -35,6 +23,68 @@
             "color": "#ff7700"
         }
     ],
+    "editor.wordWrap": "wordWrapColumn",
+    "editor.wordWrapColumn": 100,
+    "files.exclude": {
+        "**/.idea": true
+    },
+    "git.autofetch": true,
+    "prettier.singleQuote": true,
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
+    "[markdown]": {
+        "editor.defaultFormatter": "DavidAnson.vscode-markdownlint"
+    },
+    "vim.vimrc.enable": true,
+    "vim.textwidth": 100,
+    "vim.neovimConfigPath": "~/.config/nvim/init.lua",
+    "vim.neovimPath": "/usr/local/bin/nvim",
+    "window.density.editorTabHeight": "compact",
     "prettier.tabWidth": 4,
     "prettier.useTabs": true,
+    "vim.easymotion": true,
+    "vim.incsearch": true,
+    "vim.useSystemClipboard": true,
+    "vim.useCtrlKeys": true,
+    "vim.hlsearch": true,
+    "vim.highlightedyank": {
+        "enable": true,
+        "color": "#ff7700"
+    },
+    "vim.autoIndent": true,
+    "vim.autoFormat": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["j", "j"],
+            "after": ["<Esc>"]
+        }
+    ],
+    "vim.normalModeKeyBindingsNonRecursive": [
+        {
+            "before": ["<leader>", "d"],
+            "after": ["d", "d"]
+        },
+        {
+            "before": ["<C-n>"],
+            "commands": [":nohl"]
+        },
+        {
+            "before": ["K"],
+            "commands": ["lineBreakInsert"],
+            "silent": true
+        }
+    ],
+    "vim.leader": "<space>",
+    "vim.handleKeys": {
+        "<C-a>": false,
+        "<C-f>": false
+    },
+    "extensions.experimental.affinity": {
+        "vscodevim.vim": 1
+    },
+    "editor.lineNumbers": "relative",
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
 }
