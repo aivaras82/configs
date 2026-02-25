@@ -9,9 +9,9 @@ export ZSH="$HOME/.oh-my-zsh"
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 #ZSH_THEME="robbyrussell"
-ZSH_THEME="agnoster"
+#ZSH_THEME="agnoster"
 #ZSH_THEME="bira"
-#ZSH_THEME="jonathan"
+ZSH_THEME="jonathan"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -73,7 +73,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git brew encode64 macos npm nvm)
+#plugins=(git npm nvm)
 
 # Lazy Loading NVM
 zstyle ':omz:plugins:nvm' lazy yes
@@ -122,8 +122,12 @@ prompt_context() {
 }
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# Claude
+#unset NODE_EXTRA_CA_CERTS
+export NODE_TLS_REJECT_UNAUTHORIZED=0
 
 # pnpm
 export PNPM_HOME="/Users/aivaras/Library/pnpm"
@@ -132,3 +136,18 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 # pnpm end
+
+# bun completions
+#[ -s "/Users/aivaras/.bun/_bun" ] && source "/Users/aivaras/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# bun completions
+[ -s "$BUN_INSTALL/_bun" ] && \. "$BUN_INSTALL/_bun"
+
+# opencode
+export PATH=/Users/aivaras/.opencode/bin:$PATH
+
+export CURL_CA_BUNDLE=/usr/local/etc/ca-certificates/cert.pem

@@ -1,0 +1,8 @@
+[user]
+	name = Aivaras Stankevicius
+	email = aivaras@bopdesign.com
+[core]
+	autocrlf = input
+	editor = vim
+[init]
+	defaultBranch = master
